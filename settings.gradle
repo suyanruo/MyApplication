@@ -1,0 +1,3 @@
+include ':app', ':mylibrary'
+// 设置gradle文件名称
+//rootProject.buildFileName = "gradle-tips.gradle"

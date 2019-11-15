@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <meta charset="UTF-8">
+    <title>html1</title>
+    
+</head>
+<body>
+    
+    <a href="html2.html">html2.html</a>
+    <a onClick="window.JSCallJava.callJava('hello a click')"><p>a标签调用本地java</p></a>
+    </br>
+    <input type="button" id="call_java" value="调用本地java"></input>
+    </br>
+    jsCallJavaResult:<span id="span_result"></span>
+    </br>
+    javaCallJS:<span id="span_javamsg"></span>
+    </br>
+    <input type="button" id="button1" value="点击调用Android代码" onclick="clickprompt()"/>
+    <script type="text/javascript">
+
+        var call_java = document.getElementById("call_java");
+        var span_result = document.getElementById("span_result");
+        var span_javamsg = document.getElementById("span_javamsg");
+
+        call_java.onclick = function(){
+            var result = window.JSCallJava.callJava('hello input click');
+            span_result.innerHTML = result;
+        };
+
+        window.javaCallJS = function(msg){
+            span_javamsg.innerHTML = msg;
+            window.JSCallJava.onJavaCallJSResult('true');
+            return true;
+        };
+
+        function clickprompt(){
+            // 调用prompt（）
+            var result=prompt("js://webview?arg1=111&arg2=222");
+            alert("demo " + result);
+        }
+
+    </script>
+
+</body>
+</html>
