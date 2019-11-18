@@ -11,3 +11,6 @@
 /build
 /captures
 .externalNativeBuild
+
+# Version control
+vcs.xml

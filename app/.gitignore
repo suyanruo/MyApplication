@@ -1,1 +1,14 @@
+# Gradle files
+.gradle/
 /build
+
+# IntelliJ
+.idea/
+
+# Generated files
+bin/
+gen/
+out/
+
+# Version control
+vcs.xml
